@@ -11,12 +11,3 @@ if __name__ == "__main__":
 
     rotate_2d_matrix(matrix)
     print(matrix)
-
-# API_HOST=0.0.0.0 API_PORT=5000 AUTH_TYPE=basic_auth ./main_0.py
-
-# in the terminal
-# API_HOST=0.0.0.0 API_PORT=5000 AUTH_TYPE=basic_auth python3 -m api.v1.app
-
-# In a second terminal:
-
-# curl "http://0.0.0.0:5000/api/v1/status"
