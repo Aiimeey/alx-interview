@@ -6,7 +6,6 @@ from typing import List
 def makeChange(coins: List[int], total: int) -> int:
     """ Computes the min number of coins needed to make up a given amount"""
     coins.sort(reverse=True)
-    print(coins)
     count = 0
     while total > 0:
         for x in range(len(coins)):
