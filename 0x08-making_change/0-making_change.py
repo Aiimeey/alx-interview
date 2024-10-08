@@ -1,5 +1,10 @@
-#!/usr/bin/env python3
-def makeChange(coins, total):
+#!/usr/bin/python3
+"""make change methods"""
+from typing import List
+
+
+def makeChange(coins: List[int], total: int) -> int:
+    """ Computes the min number of coins needed to make up a given amount"""
     coins.sort(reverse=True)
     print(coins)
     count = 0
