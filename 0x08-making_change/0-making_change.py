@@ -7,6 +7,8 @@ def makeChange(coins: List[int], total: int) -> int:
     """ Computes the min number of coins needed to make up a given amount"""
     coins.sort(reverse=True)
     count = 0
+    if not coins:
+        return -1
     while total > 0:
         for x in range(len(coins)):
             if coins[x] <= total:
