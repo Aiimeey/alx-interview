@@ -1,23 +1,31 @@
 #!/usr/bin/python3
-"""
-Module to calculate the perimeter of an island represented in a grid
-"""
-from typing import List
+"""module island_perimeter"""
+# from typing import List
 
 
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid):
     """
-    Calculate the perimeter of an island in a grid
+    The perimeter of the island described in grid.
     """
-    count = 0
-    for i, x in enumerate(grid):
-        for j, y in enumerate(x):
-            if grid[i][j] == 1:
-                if grid[i-1][j] == 0:
-                    count += 1
-                if grid[i+1][j] == 0:
-                    count += 1
-                if grid[i][j+1] == 0:
-                    count += 1
-                if grid[i][j-1] == 0:
-                    count += 1
+    perimeter = 0
+
+    for row in range(len(grid)):
+        for column in range(len(grid[0])):
+            if grid[row][column]:
+
+                # check left.
+                if not column or not grid[row][column - 1]:
+                    perimeter += 1
+
+                # check up
+                if not row or not grid[row - 1][column]:
+                    perimeter += 1
+
+                # check right
+                if column == len(grid[0]) - 1 or not grid[row][column + 1]:
+                    perimeter += 1
+
+                # check down
+                if row == len(grid) - 1 or not grid[row + 1][column]:
+                    perimeter += 1
+    return perimeter
